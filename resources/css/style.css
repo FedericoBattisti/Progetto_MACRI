@@ -4,7 +4,7 @@
 
 .titolo-custom{
     color:white;
-    background-color: #747675;
+    background-color: #9F7A74;
 }
 
 .nav-custom{
@@ -15,6 +15,41 @@
     text-decoration: none;
 }
 .nav-custom:hover{
-    border-bottom:2px solid #747675;
+    border-bottom:2px solid #9F7A74;
     transition: 0.2s ease-in-out;
+}
+
+.logo-custom{
+    width: 5%;
+    height: auto;
+}
+
+.logo-custom2{
+    width: 25%;
+    height: auto;
+}
+
+.btn-outline-macri{
+    border: 1px solid #9F7A74;
+    color: #9F7A74;
+}
+
+.btn-outline-macri:hover{
+    background-color: #9F7A74;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.form-control{
+    border: 1px solid #9F7A74;
+    background-color: #F8F4F1;
+}
+
+li{
+    list-style: none;
+}
+
+.social-custom{
+    width: 70%;
+    height: auto;
 }
