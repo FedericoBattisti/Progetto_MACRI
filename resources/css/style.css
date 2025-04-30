@@ -53,3 +53,7 @@ li{
     width: 70%;
     height: auto;
 }
+
+#navDisabled:hover, #navDisabled{
+    border-bottom: none;
+}

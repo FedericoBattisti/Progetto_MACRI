@@ -10,8 +10,19 @@
                 <li class="nav-item">
                     <a class="nav-custom" aria-current="page" href="{{route('home')}}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-custom" href="{{route('collection')}}">Collezione Estate 2025</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Collezioni
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('collection')}}">Promozioni</a></li>
+                        <li><hr></li>
+                        <li><a class="dropdown-item" href="{{route('collection.spring')}}">Primavera</a></li>
+                        <li><a class="dropdown-item" href="{{route('collection.summer')}}">Estate</a></li>
+                        <li><a class="dropdown-item" href="{{route('collection.autumn')}}">Autunno</a></li>
+                        <li><a class="dropdown-item" href="{{route('collection.winter')}}">Inverno</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-custom" href="{{route('dove')}}">Dove siamo e orari</a>
@@ -20,9 +31,8 @@
                     <a class="nav-custom" href="{{route('contatti')}}">Contatti e social</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Account Personale
+                    <a class="nav-custom dropdown-toggle disabled text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" tabindex="-1" aria-disabled="true" id="navDisabled">
+                    Account Personale
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Accedi</a></li>

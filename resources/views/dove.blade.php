@@ -1,3 +1,4 @@
+@section('title', $title)
 <x-layout>
     <div class="container my-3">
         <div class="row justify-content-center">

@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <title>MÀCRÌ</title>
+    <title>@yield('title', 'Titolo di default')</title>
+    <link rel="icon" href="{{ asset('macri.jpg') }}" type="image/x-icon">
     @vite (['resources/js/app.js', 'resources/css/app.css'])
 </head>
 
