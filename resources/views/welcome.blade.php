@@ -7,4 +7,10 @@
             </div>
         </div>
     </div>
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Chiudi"></button>
+        </div>
+    @endif
 </x-layout>
