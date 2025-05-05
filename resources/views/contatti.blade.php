@@ -13,7 +13,7 @@
                 <ul>
                     <li>Telefono: <strong>+39 06 9522 9823</strong></li>
                     <li>Email: <strong>
-                        <a href="mailto:info@esempio.it" class="text-decoration-none">info@esempio.it</a>
+                        <a href="mailto:info@esempio.it" class="text-decoration-none">officinedeibambini@gmail.com</a>
                     </strong></li>
                 </ul>
             </div>

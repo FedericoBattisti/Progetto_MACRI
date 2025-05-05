@@ -30,12 +30,12 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 d-flex justify-content-center">
                 <ul>
-                    <li>Lunedì: <strong>09.00-19:30</strong></li>
-                    <li>Martedì: <strong>09.00-19:30</strong></li>
-                    <li>Mercoledì: <strong>09.00-19:30</strong></li>
-                    <li>Giovedì: <strong>09.00-19:30</strong></li>
-                    <li>Venerdì: <strong>09.00-19:30</strong></li>
-                    <li>Sabato: <strong>09.00-19:30</strong></li>
+                    <li>Lunedì: <strong>09.00-13:00 15:30-19:30</strong></li>
+                    <li>Martedì: <strong>09.00-13:00 15:30-19:30</strong></li>
+                    <li>Mercoledì: <strong>09.00-13:00 15:30-19:30</strong></li>
+                    <li>Giovedì: <strong>09.00-13:00 15:30-19:30</strong></li>
+                    <li>Venerdì: <strong>09.00-13:00 15:30-19:30</strong></li>
+                    <li>Sabato: <strong>09.00-13:00 15:30-19:30</strong></li>
                     <li>Domenica: <strong>Chiuso</strong></li>
                 </ul>
             </div>
