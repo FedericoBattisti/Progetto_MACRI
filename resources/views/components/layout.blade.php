@@ -12,6 +12,10 @@
     <title>@yield('title', 'Titolo di default')</title>
     <link rel="icon" href="{{ asset('macri.jpg') }}" type="image/x-icon">
     @vite (['resources/js/app.js', 'resources/css/app.css'])
+    <!-- Altri meta tag e CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Altri CSS personalizzati -->
 </head>
 
 <body>

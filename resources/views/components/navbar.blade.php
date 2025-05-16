@@ -62,20 +62,25 @@
 <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="POST" action="{{ route('newsletter.subscribe') }}">
+            <form method="POST" action="{{ route('newslettersubscribe') }}">
                 @csrf
-                <div class="modal-header">
+                <div class="modal-header" style="background-color: #f8e7d2;">
                     <h5 class="modal-title" id="newsletterModalLabel">Iscriviti alla newsletter</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
                 </div>
                 <div class="modal-body">
+                    <p class="mb-3">Resta aggiornato sulle ultime collezioni, le promozioni esclusive e gli eventi di
+                        MÀCRÌ.</p>
+                    <p>In regalo per te un coupon del 10% sul tuo primo acquisto in negozio presentando la mail di conferma!
+                    </p>
                     <div class="mb-3">
                         <label for="newsletterEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="newsletterEmail" name="email" required>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Iscriviti</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="submit" class="btn btn-outline-macri">Iscriviti</button>
                 </div>
             </form>
         </div>
