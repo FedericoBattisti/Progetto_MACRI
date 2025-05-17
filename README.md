@@ -1,3 +1,4 @@
+```mermaid e 
 graph TD
     A[API in Laravel] --> B[🌟 Principi Fondamentali]
     A --> C[🧩 Componenti Chiave di Laravel per API]
@@ -35,3 +36,4 @@ graph TD
 
     V --> A1[🌐 Autenticazione SPA]
     V --> A2[📱 Autenticazione <br> Mobile/API Token]
+```
