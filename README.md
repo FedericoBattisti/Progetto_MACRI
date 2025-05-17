@@ -1,4 +1,4 @@
-```mermaid e 
+```mermaid
 graph TD
     A[API in Laravel] --> B[🌟 Principi Fondamentali]
     A --> C[🧩 Componenti Chiave di Laravel per API]
