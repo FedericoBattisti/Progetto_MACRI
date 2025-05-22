@@ -37,3 +37,17 @@ graph TD
     V --> A1[🌐 Autenticazione SPA]
     V --> A2[📱 Autenticazione <br> Mobile/API Token]
 ```
+
+Prima marchio poi categoria
+
+lancio in settembre con direttamente collezione autunno inverno
+
+cambiare collezioni in semestrali, nascondere a due a due prim/es, aut/inv
+
+caroselli e gallerie per mosgtrare le foto
+
+no prezzi, solo promozioni
+
+cose particolari marchi
+
+controllo newsletter

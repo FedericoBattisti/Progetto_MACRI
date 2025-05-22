@@ -6,7 +6,7 @@
                 <a href="{{ route('home') }}" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
                     <img src="{{ asset('media/macri.jpg') }}" class="logo-custom2" alt="Logo MÀCRÌ">
                 </a>
-                <p class="text-muted mb-1">Eleganza e stile dal 1998</p>
+                <p class="text-muted mb-1">Eleganza e stile dal 2023</p>
                 <p class="text-muted small mb-4">Via Seggiano, 5 - 00139 Roma (RM)</p>
                 <p class="text-muted small">P.IVA: 12345678901</p>
             </div>
@@ -40,12 +40,6 @@
                 <div class="d-flex gap-3 mb-4">
                     <a href="https://www.instagram.com/macriabbigliamentodonna" class="text-decoration-none" target="_blank">
                         <i class="bi bi-instagram fs-4" style="color: #3d2c18;"></i>
-                    </a>
-                    <a href="https://www.facebook.com/macriboutique" class="text-decoration-none" target="_blank">
-                        <i class="bi bi-facebook fs-4" style="color: #3d2c18;"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@macriboutique" class="text-decoration-none" target="_blank">
-                        <i class="bi bi-tiktok fs-4" style="color: #3d2c18;"></i>
                     </a>
                 </div>
                 

@@ -141,7 +141,6 @@
             <p>Seguici sui social</p>
             <div class="social-icons">
                 <a href="https://www.instagram.com/macriabbigliamentodonna"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-icon"></a>
-                <a href="https://www.facebook.com/macriboutique"><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" class="social-icon"></a>
             </div>
             
             <div class="address">

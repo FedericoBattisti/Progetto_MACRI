@@ -21,7 +21,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3">
                                 <h6 class="mb-0">Telefono</h6>
-                                <a href="tel:+390695229823" class="text-decoration-none">+39 06 9522 9823</a>
+                                <a href="#" class="text-decoration-none">+39 06 9522 9823</a><br>
+                                <a href="tel:+393293396593" class="text-decoration-none">+39 329 339 6593</a>
                             </div>
                         </div>
                         
@@ -31,7 +32,7 @@
                             </div>
                             <div class="flex-grow-1 ms-3">
                                 <h6 class="mb-0">Email</h6>
-                                <a href="mailto:info@macriboutique.it" class="text-decoration-none">info@macriboutique.it</a>
+                                <a href="mailto:info@macriboutique.it" class="text-decoration-none">officinedeibambini@gmail.com</a>
                             </div>
                         </div>
                         
@@ -74,22 +75,12 @@
                         <h4 class="card-title mb-4" style="color: #3d2c18;">Seguici sui social</h4>
                         
                         <div class="row g-4">
-                            <div class="col-6 text-center">
+                            <div class="col-12 text-center">
                                 <a href="https://www.instagram.com/macriabbigliamentodonna" class="text-decoration-none">
                                     <div class="p-3 rounded" style="background-color: #f8e7d2;">
                                         <i class="bi bi-instagram fs-1" style="color: #3d2c18;"></i>
                                         <h5 class="mt-2">Instagram</h5>
                                         <p class="text-muted">@macriabbigliamentodonna</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col-6 text-center">
-                                <a href="https://www.facebook.com/macriboutique" class="text-decoration-none">
-                                    <div class="p-3 rounded" style="background-color: #f8e7d2;">
-                                        <i class="bi bi-facebook fs-1" style="color: #3d2c18;"></i>
-                                        <h5 class="mt-2">Facebook</h5>
-                                        <p class="text-muted">Macri Boutique</p>
                                     </div>
                                 </a>
                             </div>

@@ -15,7 +15,6 @@
             <div class="position-absolute top-50 start-50 translate-middle text-center p-3 p-md-4"
                 style="background-color: rgba(255,255,255,0.9); border-radius: 10px; width: 90%; max-width: 500px;">
                 <h1 class="titolo-custom" style="font-size: calc(1.5rem + 1vw);">Benvenuto in MÀCRÌ</h1>
-                <p class="lead">Eleganza e stile per ogni occasione</p>
             </div>
         </div>
     </div>
