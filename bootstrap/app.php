@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        // Registra il middleware per le stagioni
+        $middleware->alias([
+            'season.check' => \App\Http\Middleware\CheckSeasonAvailability::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

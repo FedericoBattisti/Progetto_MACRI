@@ -17,13 +17,27 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('collection') }}">Promozioni</a></li>
-                        <li>
-                            <hr>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('collection.spring') }}">Primavera</a></li>
-                        <li><a class="dropdown-item" href="{{ route('collection.summer') }}">Estate</a></li>
-                        <li><a class="dropdown-item" href="{{ route('collection.autumn') }}">Autunno</a></li>
-                        <li><a class="dropdown-item" href="{{ route('collection.winter') }}">Inverno</a></li>
+                        <li><hr></li>
+
+                        @php
+                            $seasons = \App\Helpers\SeasonHelper::getAllSeasonsStatus();
+                        @endphp
+
+                        @foreach($seasons as $season => $data)
+                            <li>
+                                @if($data['active'])
+                                    <a class="dropdown-item" href="{{ route($data['route']) }}">
+                                        {{ $data['name'] }}
+                                        <small class="text-success">● Disponibile</small>
+                                    </a>
+                                @else
+                                    <span class="dropdown-item disabled text-muted" tabindex="-1" aria-disabled="true">
+                                        {{ $data['name'] }}
+                                        <small>(Dal {{ $data['next_available'] }})</small>
+                                    </span>
+                                @endif
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -36,19 +50,6 @@
                     <a class="nav-custom" href="#" data-bs-toggle="modal"
                         data-bs-target="#newsletterModal">Newsletter</a>
                 </li>
-                {{-- <li class="nav-item dropdown">
-                    <a class="nav-custom dropdown-toggle disabled text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" tabindex="-1" aria-disabled="true" id="navDisabled">
-                    Account Personale
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Accedi</a></li>
-                        <li><a class="dropdown-item" href="#">Registrati</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                    </ul>
-                </li> --}}
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -10,8 +10,6 @@
     <!-- Hero Section -->
     <div class="container-fluid my-5 mb-5">
         <div class="position-relative">
-            <img src="{{ asset('media/hero-image.jpg') }}" class="img-fluid w-100"
-                style="max-height: 70vh; object-fit: cover;" alt="MÀCRÌ Boutique">
             <div class="position-absolute top-50 start-50 translate-middle text-center p-3 p-md-4"
                 style="background-color: rgba(255,255,255,0.9); border-radius: 10px; width: 90%; max-width: 500px;">
                 <h1 class="titolo-custom" style="font-size: calc(1.5rem + 1vw);">Benvenuto in MÀCRÌ</h1>
@@ -25,7 +23,6 @@
         <div class="row g-4 justify-content-center">
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="{{ asset('media/primavera.jpg') }}" class="card-img-top" alt="Collezione Primavera">
                     <div class="card-body text-center">
                         <h5 class="card-title">Primavera</h5>
                         <p class="card-text">Colori vivaci e tessuti leggeri</p>
@@ -35,7 +32,6 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="{{ asset('media/estate.jpg') }}" class="card-img-top" alt="Collezione Estate">
                     <div class="card-body text-center">
                         <h5 class="card-title">Estate</h5>
                         <p class="card-text">Freschezza e stile per le tue vacanze</p>
@@ -45,7 +41,6 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="{{ asset('media/autunno.jpg') }}" class="card-img-top" alt="Collezione Autunno">
                     <div class="card-body text-center">
                         <h5 class="card-title">Autunno</h5>
                         <p class="card-text">Eleganza nei toni caldi della stagione</p>
@@ -55,7 +50,6 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="{{ asset('media/inverno.jpg') }}" class="card-img-top" alt="Collezione Inverno">
                     <div class="card-body text-center">
                         <h5 class="card-title">Inverno</h5>
                         <p class="card-text">Calore e raffinatezza per i giorni freddi</p>
