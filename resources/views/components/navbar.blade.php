@@ -33,7 +33,7 @@
                                 @else
                                     <span class="dropdown-item disabled text-muted" tabindex="-1" aria-disabled="true">
                                         {{ $data['name'] }}
-                                        <small>(Dal {{ $data['next_available'] }})</small>
+                                        <small>(Da {{ $data['next_available'] }})</small>
                                     </span>
                                 @endif
                             </li>
@@ -51,13 +51,142 @@
                         data-bs-target="#newsletterModal">Newsletter</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-macri" type="submit">Search</button>
+
+            <!-- Search Bar Migliorata -->
+            <form class="d-flex position-relative search-form" role="search">
+                <div class="input-group search-wrapper">
+                    <span class="input-group-text search-icon">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input class="form-control search-input" type="search" placeholder="Cerca prodotti..." aria-label="Search">
+                    <button class="btn btn-search" type="submit">
+                        <i class="bi bi-arrow-right-circle-fill"></i>
+                        <span class="btn-text">Cerca</span>
+                    </button>
+                </div>
             </form>
         </div>
     </div>
 </nav>
+
+<style>
+    /* Search Form Styling */
+    .search-form {
+        margin-left: 1rem;
+    }
+
+    .search-wrapper {
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .search-wrapper:focus-within {
+        box-shadow: 0 4px 12px rgba(159, 122, 116, 0.25);
+        border-color: #9f7a74;
+        transform: translateY(-1px);
+    }
+
+    .search-icon {
+        background-color: #fff;
+        border: none;
+        color: #9f7a74;
+        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+    }
+
+    .search-input {
+        border: none;
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .search-input:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    .search-input::placeholder {
+        color: #999;
+        font-style: italic;
+    }
+
+    .btn-search {
+        background: linear-gradient(135deg, #9f7a74 0%, #9f7a74 100%);
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-search::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: left 0.5s ease;
+    }
+
+    .btn-search:hover::before {
+        left: 100%;
+    }
+
+    .btn-search:hover {
+        background: linear-gradient(135deg, #9f7a74 0%, #9f7a74 100%);
+        transform: translateX(2px);
+        box-shadow: 0 4px 12px rgba(159, 122, 116, 0.4);
+    }
+
+    .btn-search i {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-search:hover i {
+        transform: translateX(3px);
+    }
+
+    .btn-text {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+        .search-form {
+            margin-left: 0;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .search-wrapper {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .btn-text {
+            display: none;
+        }
+
+        .btn-search {
+            padding: 0.6rem 1rem;
+        }
+    }
+</style>
 
 <!-- Modal Newsletter -->
 <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">

@@ -6,6 +6,21 @@ use Carbon\Carbon;
 
 class SeasonHelper
 {
+    private static $monthsItalian = [
+        1 => 'Gennaio',
+        2 => 'Febbraio',
+        3 => 'Marzo',
+        4 => 'Aprile',
+        5 => 'Maggio',
+        6 => 'Giugno',
+        7 => 'Luglio',
+        8 => 'Agosto',
+        9 => 'Settembre',
+        10 => 'Ottobre',
+        11 => 'Novembre',
+        12 => 'Dicembre'
+    ];
+
     public static function getSeasonPeriods()
     {
         return [
@@ -84,6 +99,8 @@ class SeasonHelper
             $startDate->addYear();
         }
 
-        return $startDate->format('M Y');
+        // Usa l'array di traduzione personalizzato
+        $monthName = self::$monthsItalian[$startDate->month];
+        return $monthName . ' ' . $startDate->year;
     }
 }
