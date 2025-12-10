@@ -81,21 +81,20 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.imgur.com/Uu8Dhyk.jpeg" alt="Logo MÀCRÌ" style="max-width: 120px; height: auto; border-radius: 8px;">
             <h2 style="color: #3d2c18; margin: 10px 0 0 0;">MÀCRÌ Boutique - Admin</h2>
         </div>
-        
+
         <h2 class="title">
             Nuova iscrizione alla newsletter
         </h2>
-        
+
         <div class="info-section">
             <p>Un utente si è appena iscritto alla newsletter del sito. Ecco i dettagli:</p>
-            
+
             <div class="email-box">
                 <strong>Email:</strong> {{ $email }}
             </div>
-            
+
             <table class="data-table">
                 <tr>
                     <th>Data iscrizione</th>
@@ -106,10 +105,10 @@
                     <td>{{ isset($source) ? $source : 'Iscrizione diretta dal sito' }}</td>
                 </tr>
             </table>
-            
+
             <p>Questa email è stata generata automaticamente. L'utente ha già ricevuto la conferma di iscrizione e il coupon di benvenuto.</p>
         </div>
-        
+
         <div class="footer">
             <p>Questa è una email di sistema, non rispondere a questo messaggio.<br>© 2025 MÀCRÌ Boutique. Tutti i diritti riservati.</p>
         </div>

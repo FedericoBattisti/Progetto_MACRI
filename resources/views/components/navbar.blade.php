@@ -10,41 +10,13 @@
                 <li class="nav-item">
                     <a class="nav-custom" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-custom dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Collezioni
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('collection') }}">Promozioni</a></li>
-                        <li><hr></li>
-
-                        @php
-                            $seasons = \App\Helpers\SeasonHelper::getAllSeasonsStatus();
-                        @endphp
-
-                        @foreach($seasons as $season => $data)
-                            <li>
-                                @if($data['active'])
-                                    <a class="dropdown-item" href="{{ route($data['route']) }}">
-                                        {{ $data['name'] }}
-                                        <small class="text-success">● Disponibile</small>
-                                    </a>
-                                @else
-                                    <span class="dropdown-item disabled text-muted" tabindex="-1" aria-disabled="true">
-                                        {{ $data['name'] }}
-                                        <small>(Da {{ $data['next_available'] }})</small>
-                                    </span>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
+                <li><a class="nav-custom" href="{{ route('chi-siamo')}}">Chi Siamo</a></li>
+                <li><a class="nav-custom" href="{{ route('collection') }}">Prodotti</a></li>
+                <li class="nav-item">
+                    <a class="nav-custom" href="{{ route('dove') }}">Dove siamo e Orari</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-custom" href="{{ route('dove') }}">Dove siamo e orari</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-custom" href="{{ route('contatti') }}">Contatti e social</a>
+                    <a class="nav-custom" href="{{ route('contatti') }}">Contatti e Social</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-custom" href="#" data-bs-toggle="modal"
@@ -53,12 +25,12 @@
             </ul>
 
             <!-- Search Bar Migliorata -->
-            <form class="d-flex position-relative search-form" role="search">
+            <form class="d-flex position-relative search-form" role="search" method="GET" action="{{ route('collection') }}">
                 <div class="input-group search-wrapper">
                     <span class="input-group-text search-icon">
                         <i class="bi bi-search"></i>
                     </span>
-                    <input class="form-control search-input" type="search" placeholder="Cerca prodotti..." aria-label="Search">
+                    <input class="form-control search-input" type="search" name="search" placeholder="Cerca prodotti..." aria-label="Search" value="{{ request('search') }}">
                     <button class="btn btn-search" type="submit">
                         <i class="bi bi-arrow-right-circle-fill"></i>
                         <span class="btn-text">Cerca</span>

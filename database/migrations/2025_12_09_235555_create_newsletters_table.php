@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('database_for_clothes', function (Blueprint $table) {
+        Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->unique();
+            $table->boolean('is_active')->default(true);
+            $table->timestamp('subscribed_at')->useCurrent();
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('database_for_clothes');
+        Schema::dropIfExists('newsletters');
     }
 };

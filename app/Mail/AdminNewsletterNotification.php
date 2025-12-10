@@ -4,22 +4,57 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Newsletter;
+use App\Models\NewsletterSubscriber;
 
 class AdminNewsletterNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email;
+    public $newsletter;
 
-    public function __construct($email)
+    /**
+     * Create a new message instance.
+     */
+    public function __construct(NewsletterSubscriber $newsletter)
     {
-        $this->email = $email;
+        $this->newsletter = $newsletter;
     }
 
-    public function build()
+    /**
+     * Get the message envelope.
+     */
+    public function envelope(): Envelope
     {
-        return $this->subject('Nuova iscrizione alla newsletter')
-            ->view('emails.admin_newsletter_notification');
+        return new Envelope(
+            subject: 'Nuova iscrizione alla Newsletter - MÀCRÌ',
+        );
+    }
+
+    /**
+     * Get the message content definition.
+     */
+    public function content(): Content
+    {
+        return new Content(
+            view: 'emails.admin_newsletter_notification',
+            with: [
+                'email' => $this->newsletter->email,
+                'date' => $this->newsletter->created_at->format('d/m/Y H:i')
+            ]
+        );
+    }
+
+    /**
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+    public function attachments(): array
+    {
+        return [];
     }
 }

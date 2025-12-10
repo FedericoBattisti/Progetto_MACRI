@@ -111,19 +111,18 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://i.imgur.com/Uu8Dhyk.jpeg" alt="Logo MÀCRÌ" class="logo">
             <h1 style="color: #3d2c18; margin: 0;">MÀCRÌ Boutique</h1>
         </div>
-        
+
         <h2 class="title">
             Grazie per esserti iscritto alla nostra newsletter!
         </h2>
-        
+
         <div class="content">
             <p>Gentile cliente,</p>
             <p>siamo felici di darti il benvenuto nella community di MÀCRÌ Boutique!</p>
             <p>D'ora in avanti riceverai in anteprima tutte le novità sulle nostre collezioni, eventi esclusivi e promozioni speciali all'indirizzo: <strong>{{ $email }}</strong></p>
-            
+
             <div class="coupon">
                 <p style="margin-bottom: 5px; color: #3d2c18;">Per ringraziarti, ecco un coupon del</p>
                 <h3 style="margin: 5px 0; color: #3d2c18;">10% DI SCONTO</h3>
@@ -131,23 +130,23 @@
                 <div class="coupon-code">WELCOME10</div>
                 <p style="font-size: 12px; margin-top: 10px; color: #666;">Mostra questo codice alla cassa</p>
             </div>
-            
+
             <p>Siamo a tua disposizione per qualsiasi domanda o necessità. Non esitare a contattarci!</p>
-            
+
             <a href="{{ route('collection') }}" class="cta-button">Scopri le nostre collezioni</a>
         </div>
-        
+
         <div class="footer">
             <p>Seguici sui social</p>
             <div class="social-icons">
-                <a href="https://www.instagram.com/macriabbigliamentodonna"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-icon"></a>
+                <a href="https://www.instagram.com/macriabbigliamentodonna">Macri Abbigliamento Donna</a>
             </div>
-            
+
             <div class="address">
                 <p>MÀCRÌ Boutique<br>
                 Via Seggiano, 5 - 00139 Roma (RM)<br>
                 Tel: +39 06 9522 9823</p>
-                
+
                 <p>Hai ricevuto questa email perché ti sei iscritto alla nostra newsletter.<br>
             </div>
         </div>
