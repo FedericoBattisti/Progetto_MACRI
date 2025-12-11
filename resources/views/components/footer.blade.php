@@ -8,7 +8,7 @@
                 </a>
                 <p class="text-muted mb-1">Eleganza e stile dal 2023</p>
                 <p class="text-muted small mb-4">Via Seggiano, 5 - 00139 Roma (RM)</p>
-                <p class="text-muted small">P.IVA: 12345678901</p>
+                <p class="text-muted small">P.IVA: 13876151005</p>
             </div>
 
             <!-- Link utili -->
@@ -48,7 +48,7 @@
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 mt-4 border-top">
-            <p class="text-muted">© 2025 MÀCRÌ. Tutti i diritti riservati.</p>
+            <p class="text-muted">© 2023 MÀCRÌ. Tutti i diritti riservati.</p>
         </div>
     </div>
 </footer>

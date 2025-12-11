@@ -1,4 +1,3 @@
-
 @section('title', $title)
 <x-layout>
     <div class="container my-5">
@@ -143,7 +142,12 @@
             <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
                 <p class="text-muted mb-0">
                     <i class="bi bi-grid-3x3-gap"></i>
-                    {{ $clothes->count() }} {{ $clothes->count() === 1 ? 'prodotto trovato' : 'prodotti trovati' }}
+                    {{ $clothes->total() }} {{ $clothes->total() === 1 ? 'prodotto trovato' : 'prodotti trovati' }}
+                    @if ($clothes->total() > 0)
+                        <span class="text-muted small">
+                            (Mostrando {{ $clothes->firstItem() }}-{{ $clothes->lastItem() }})
+                        </span>
+                    @endif
                 </p>
 
                 <!-- Tag Filtri Attivi -->
@@ -284,6 +288,52 @@
         @endif
     </div>
 
+    <!-- Paginazione -->
+    @if (!$clothes->isEmpty() && $clothes->hasPages())
+        <div class="container my-5">
+            <div class="d-flex justify-content-center">
+                <nav aria-label="Navigazione pagine">
+                    <ul class="pagination">
+                        {{-- Bottone Precedente --}}
+                        @if ($clothes->onFirstPage())
+                            <li class="page-item disabled">
+                                <span class="page-link">&laquo; Precedente</span>
+                            </li>
+                        @else
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $clothes->previousPageUrl() }}">&laquo; Precedente</a>
+                            </li>
+                        @endif
+
+                        {{-- Numeri di pagina --}}
+                        @foreach(range(1, $clothes->lastPage()) as $page)
+                            @if ($page == $clothes->currentPage())
+                                <li class="page-item active">
+                                    <span class="page-link">{{ $page }}</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $clothes->url($page) }}">{{ $page }}</a>
+                                </li>
+                            @endif
+                        @endforeach
+
+                        {{-- Bottone Successivo --}}
+                        @if ($clothes->hasMorePages())
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $clothes->nextPageUrl() }}">Successivo &raquo;</a>
+                            </li>
+                        @else
+                            <li class="page-item disabled">
+                                <span class="page-link">Successivo &raquo;</span>
+                            </li>
+                        @endif
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    @endif
+
     <!-- Bottone Torna Su -->
     <button id="backToTop" class="btn-back-to-top" title="Torna su">
         <i class="bi bi-arrow-up-circle-fill"></i>
@@ -412,6 +462,33 @@
 
         .alert-info hr {
             border-color: rgba(13, 202, 240, 0.3);
+        }
+
+        /* Stili per la paginazione */
+        .pagination {
+            gap: 0.25rem;
+        }
+
+        .page-link {
+            color: #ce9352;
+            border-color: #ce9352;
+            transition: all 0.3s ease;
+        }
+
+        .page-link:hover {
+            background-color: #ce9352;
+            border-color: #ce9352;
+            color: white;
+        }
+
+        .page-item.active .page-link {
+            background-color: #ce9352;
+            border-color: #ce9352;
+        }
+
+        .page-item.disabled .page-link {
+            color: #9e9e9e;
+            border-color: #dee2e6;
         }
 
         /* Bottone Torna Su */

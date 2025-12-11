@@ -17,36 +17,24 @@ class PublicController extends Controller
 
     public function collection(Request $request)
     {
-        // Query base
-        $query = Clothe::whereNull('deleted_at')
-            ->whereHas('images')
-            ->with('primaryImage');
+        $query = Clothe::query();
 
-        // Ricerca per testo
+        // Applica filtri esistenti...
         if ($request->filled('search')) {
-            $search = $request->search;
-            $query->where(function ($q) use ($search) {
-                $q->where('name', 'like', "%{$search}%")
-                    ->orWhere('description', 'like', "%{$search}%")
-                    ->orWhere('material', 'like', "%{$search}%")
-                    ->orWhere('brand', 'like', "%{$search}%")
-                    ->orWhere('category', 'like', "%{$search}%");
-            });
+            $query->where('name', 'like', '%' . $request->search . '%')
+                ->orWhere('description', 'like', '%' . $request->search . '%');
         }
 
-        // Filtro per brand
         if ($request->filled('brand')) {
             $query->where('brand', $request->brand);
         }
 
-        // Filtro per categoria
         if ($request->filled('category')) {
             $query->where('category', $request->category);
         }
 
-        // Ordinamento
-        $sortBy = $request->get('sort', 'newest');
-        switch ($sortBy) {
+        // Applica ordinamento...
+        switch ($request->get('sort', 'newest')) {
             case 'price_asc':
                 $query->orderBy('price', 'asc');
                 break;
@@ -57,10 +45,11 @@ class PublicController extends Controller
                 $query->orderBy('name', 'asc');
                 break;
             default:
-                $query->orderBy('created_at', 'desc');
+                $query->latest();
         }
 
-        $clothes = $query->get();
+        // Usa paginate invece di get
+        $clothes = $query->paginate(21)->withQueryString();
 
         // Ottieni tutti i brand e categorie disponibili per i filtri
         $brands = Clothe::whereNull('deleted_at')
@@ -83,7 +72,7 @@ class PublicController extends Controller
             'categories' => $categories,
             'selectedBrand' => $request->brand,
             'selectedCategory' => $request->category,
-            'selectedSort' => $sortBy,
+            'selectedSort' => $request->get('sort', 'newest'),
             'searchQuery' => $request->search
         ]);
     }

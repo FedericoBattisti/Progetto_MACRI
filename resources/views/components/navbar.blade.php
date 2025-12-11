@@ -158,31 +158,98 @@
             padding: 0.6rem 1rem;
         }
     }
+
+    .text-macri {
+        color: #ce9352 !important;
+    }
+
+    .btn-macri {
+        background-color: #ce9352;
+        border-color: #ce9352;
+        color: white;
+    }
+
+    .btn-macri:hover {
+        background-color: #b8834a;
+        border-color: #b8834a;
+        color: white;
+    }
+
+    /* Stile checkbox personalizzato */
+    .form-check-input:checked {
+        background-color: #ce9352;
+        border-color: #ce9352;
+    }
+
+    .form-check-input:focus {
+        border-color: #ce9352;
+        box-shadow: 0 0 0 0.25rem rgba(206, 147, 82, 0.25);
+    }
+
+    /* Stile scrollbar per modal privacy */
+    .modal-dialog-scrollable .modal-body {
+        max-height: calc(100vh - 200px);
+    }
+
+    .modal-body h6 {
+        color: #3d2c18;
+        font-weight: 600;
+    }
 </style>
 
 <!-- Modal Newsletter -->
 <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form method="POST" action="{{ route('newslettersubscribe') }}">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="newsletterModalLabel">
+                    <i class="bi bi-envelope-heart text-macri"></i> Iscriviti alla Newsletter
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <form action="{{ route('newslettersubscribe') }}" method="POST">
                 @csrf
-                <div class="modal-header" style="background-color: #f8e7d2;">
-                    <h5 class="modal-title" id="newsletterModalLabel">Iscriviti alla newsletter</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
-                </div>
                 <div class="modal-body">
-                    <p class="mb-3">Resta aggiornato sulle ultime collezioni, le promozioni esclusive e gli eventi di
-                        MÀCRÌ.</p>
-                    <p>In regalo per te un coupon del 10% sul tuo primo acquisto in negozio presentando la mail di conferma!
+                    <p class="text-muted">
+                        Ricevi <strong>10% di sconto</strong> sul tuo primo acquisto e resta aggiornato su nuove
+                        collezioni ed offerte esclusive!
                     </p>
                     <div class="mb-3">
-                        <label for="newsletterEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="newsletterEmail" name="email" required>
+                        <label for="email" class="form-label">Indirizzo Email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="tuaemail@esempio.com" required>
+                        <div class="invalid-feedback">
+                            Inserisci un indirizzo email valido.
+                        </div>
                     </div>
+
+                    <!-- Privacy e GDPR -->
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacy_consent"
+                            required>
+                        <label class="form-check-label small" for="privacyConsent">
+                            Acconsento al trattamento dei miei dati personali ai sensi del
+                            <strong>D.Lgs. 196/2003</strong> (Codice in materia di protezione dei dati personali) e
+                            del <strong>Regolamento UE 2016/679 (GDPR)</strong>.
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"
+                                class="text-macri text-decoration-none">
+                                Leggi l'informativa privacy
+                            </a>
+                        </label>
+                    </div>
+
+                    <p class="small text-muted mb-0">
+                        <i class="bi bi-shield-check text-success"></i>
+                        I tuoi dati sono protetti e non verranno condivisi con terze parti.
+                    </p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                    <button type="submit" class="btn btn-outline-macri">Iscriviti</button>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Annulla
+                    </button>
+                    <button type="submit" class="btn btn-macri">
+                        <i class="bi bi-envelope-check"></i> Iscriviti
+                    </button>
                 </div>
             </form>
         </div>
