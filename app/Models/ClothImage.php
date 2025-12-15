@@ -30,9 +30,13 @@ class ClothImage extends Model
         return asset('storage/' . $this->path);
     }
 
-    public function clothe()
+    public function cloth()
     {
-        return $this->belongsTo(Clothe::class);
+        return $this->belongsTo(Clothe::class, 'clothe_id'); // stesso nome della colonna
+    }
+    
+    public function images()
+    {
+        return $this->hasMany(ClothImage::class, 'clothe_id');
     }
 }
-
