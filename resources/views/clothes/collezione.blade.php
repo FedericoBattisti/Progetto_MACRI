@@ -494,8 +494,8 @@
         /* Bottone Torna Su */
         .btn-back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             width: 50px;
             height: 50px;
             background-color: #ce9352;
@@ -507,27 +507,30 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            z-index: 1000;
+            z-index: 1050; /* Aumentato per stare sopra tutto */
             box-shadow: 0 4px 15px rgba(206, 147, 82, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
+            /* FIX: Previeni overflow orizzontale */
+            transform: translateX(0);
         }
 
         .btn-back-to-top.show {
             opacity: 1;
             visibility: visible;
+            transform: translateX(0); /* Mantieni posizione fissa */
         }
 
         .btn-back-to-top:hover {
             background-color: #b8834a;
-            transform: translateY(-5px);
+            transform: translateY(-5px) translateX(0); /* Movimento solo verticale */
             box-shadow: 0 6px 20px rgba(206, 147, 82, 0.6);
         }
 
         .btn-back-to-top:active {
-            transform: translateY(-3px);
+            transform: translateY(-3px) translateX(0);
         }
 
         .btn-back-to-top i {
@@ -554,9 +557,23 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.75rem;
-                bottom: 20px;
-                right: 20px;
+                bottom: 15px;
+                right: 15px;
             }
+        }
+
+        /* FIX GENERALE: Previeni overflow orizzontale */
+        body {
+            overflow-x: hidden;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            overflow-x: hidden;
         }
     </style>
 
