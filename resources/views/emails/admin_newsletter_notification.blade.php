@@ -110,7 +110,7 @@
         </div>
 
         <div class="footer">
-            <p>Questa è una email di sistema, non rispondere a questo messaggio.<br>© 2025 MÀCRÌ Boutique. Tutti i diritti riservati.</p>
+            <p>Questa è una email di sistema, non rispondere a questo messaggio.<br>© 2023 MÀCRÌ Boutique. Tutti i diritti riservati.</p>
         </div>
     </div>
 </body>

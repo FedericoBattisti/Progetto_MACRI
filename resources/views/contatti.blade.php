@@ -57,17 +57,61 @@
                         <hr class="my-4">
 
                         <h5 class="mb-3">Hai una domanda?</h5>
-                        <form>
+
+                        <!-- Mostra messaggi di successo/errore -->
+                        @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        @endif
+
+                        @if (session('error'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                {{ session('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        @endif
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        @endif
+
+                        <form action="{{ route('contact.submit') }}" method="POST">
+                            @csrf
                             <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Nome e cognome" required>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" placeholder="Nome e cognome" value="{{ old('name') }}" required>
+                                @error('name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Email" required>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" placeholder="Email" value="{{ old('email') }}" required>
+                                @error('email')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <textarea class="form-control" rows="3" placeholder="Il tuo messaggio" required></textarea>
+                                <textarea class="form-control @error('message') is-invalid @enderror" name="message" rows="3"
+                                    placeholder="Il tuo messaggio (min. 10 caratteri)" required>{{ old('message') }}</textarea>
+                                @error('message')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
-                            <button type="submit" class="btn btn-outline-macri">Invia messaggio</button>
+                            <button type="submit" class="btn btn-outline-macri">
+                                <i class="bi bi-send"></i> Invia messaggio
+                            </button>
                         </form>
                     </div>
                 </div>

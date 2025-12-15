@@ -3,6 +3,7 @@
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('home');
@@ -15,3 +16,4 @@ Route::match(['get', 'post'], 'newsletter/subscribe', [NewsletterController::cla
 
 // Route per dettaglio prodotto
 Route::get('/prodotto/{clothe}', [PublicController::class, 'show'])->name('clothe.show');
+Route::post('/contatti/invia', [ContactController::class, 'submit'])->name('contact.submit');
