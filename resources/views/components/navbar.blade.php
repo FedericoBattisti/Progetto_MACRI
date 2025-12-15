@@ -10,7 +10,7 @@
                 <li class="nav-item">
                     <a class="nav-custom" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
-                <li><a class="nav-custom" href="{{ route('chi-siamo')}}">Chi Siamo</a></li>
+                <li><a class="nav-custom" href="{{ route('chi-siamo') }}">Chi Siamo</a></li>
                 <li><a class="nav-custom" href="{{ route('collection') }}">Prodotti</a></li>
                 <li class="nav-item">
                     <a class="nav-custom" href="{{ route('dove') }}">Dove siamo e Orari</a>
@@ -25,18 +25,79 @@
             </ul>
 
             <!-- Search Bar Migliorata -->
-            <form class="d-flex position-relative search-form" role="search" method="GET" action="{{ route('collection') }}">
+            <form class="d-flex position-relative search-form" role="search" method="GET"
+                action="{{ route('collection') }}">
                 <div class="input-group search-wrapper">
                     <span class="input-group-text search-icon">
                         <i class="bi bi-search"></i>
                     </span>
-                    <input class="form-control search-input" type="search" name="search" placeholder="Cerca prodotti..." aria-label="Search" value="{{ request('search') }}">
+                    <input class="form-control search-input" type="search" name="search"
+                        placeholder="Cerca prodotti..." aria-label="Search" value="{{ request('search') }}">
                     <button class="btn btn-search" type="submit">
                         <i class="bi bi-arrow-right-circle-fill"></i>
                         <span class="btn-text">Cerca</span>
                     </button>
                 </div>
             </form>
+        </div>
+    </div>
+    <!-- Modal Newsletter -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="newsletterModalLabel">
+                        <i class="bi bi-envelope-heart text-macri"></i> Iscriviti alla Newsletter
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+                </div>
+                <form action="{{ route('newslettersubscribe') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <p class="text-muted">
+                            Ricevi <strong>10% di sconto</strong> sul tuo primo acquisto e resta aggiornato su nuove
+                            collezioni ed offerte esclusive!
+                        </p>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Indirizzo Email</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="tuaemail@esempio.com" required>
+                            <div class="invalid-feedback">
+                                Inserisci un indirizzo email valido.
+                            </div>
+                        </div>
+
+                        <!-- Privacy e GDPR -->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacy_consent"
+                                required>
+                            <label class="form-check-label small" for="privacyConsent">
+                                Acconsento al trattamento dei miei dati personali ai sensi del
+                                <strong>D.Lgs. 196/2003</strong> (Codice in materia di protezione dei dati personali) e
+                                del <strong>Regolamento UE 2016/679 (GDPR)</strong>.
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"
+                                    class="text-macri text-decoration-none">
+                                    Leggi l'informativa privacy
+                                </a>
+                            </label>
+                        </div>
+
+                        <p class="small text-muted mb-0">
+                            <i class="bi bi-shield-check text-success"></i>
+                            I tuoi dati sono protetti e non verranno condivisi con terze parti.
+                        </p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                            Annulla
+                        </button>
+                        <button type="submit" class="btn btn-macri">
+                            <i class="bi bi-envelope-check"></i> Iscriviti
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </nav>
@@ -196,62 +257,3 @@
         font-weight: 600;
     }
 </style>
-
-<!-- Modal Newsletter -->
-<div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-0">
-                <h5 class="modal-title" id="newsletterModalLabel">
-                    <i class="bi bi-envelope-heart text-macri"></i> Iscriviti alla Newsletter
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
-            </div>
-            <form action="{{ route('newslettersubscribe') }}" method="POST">
-                @csrf
-                <div class="modal-body">
-                    <p class="text-muted">
-                        Ricevi <strong>10% di sconto</strong> sul tuo primo acquisto e resta aggiornato su nuove
-                        collezioni ed offerte esclusive!
-                    </p>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Indirizzo Email</label>
-                        <input type="email" class="form-control" id="email" name="email"
-                            placeholder="tuaemail@esempio.com" required>
-                        <div class="invalid-feedback">
-                            Inserisci un indirizzo email valido.
-                        </div>
-                    </div>
-
-                    <!-- Privacy e GDPR -->
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacy_consent"
-                            required>
-                        <label class="form-check-label small" for="privacyConsent">
-                            Acconsento al trattamento dei miei dati personali ai sensi del
-                            <strong>D.Lgs. 196/2003</strong> (Codice in materia di protezione dei dati personali) e
-                            del <strong>Regolamento UE 2016/679 (GDPR)</strong>.
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"
-                                class="text-macri text-decoration-none">
-                                Leggi l'informativa privacy
-                            </a>
-                        </label>
-                    </div>
-
-                    <p class="small text-muted mb-0">
-                        <i class="bi bi-shield-check text-success"></i>
-                        I tuoi dati sono protetti e non verranno condivisi con terze parti.
-                    </p>
-                </div>
-                <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                        Annulla
-                    </button>
-                    <button type="submit" class="btn btn-macri">
-                        <i class="bi bi-envelope-check"></i> Iscriviti
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
