@@ -69,16 +69,6 @@
                         </div>
 
                         <!-- Privacy e GDPR -->
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" id="privacyConsent" name="privacy_consent">
-                            <label class="form-check-label" for="privacyConsent">
-                                Accetto l'<a href="{{ route('privacy') }}" target="_blank">informativa privacy</a>
-                            </label>
-                            <div class="invalid-feedback d-block text-danger" id="privacyError" style="display: none !important;">
-                                Devi accettare l'informativa privacy
-                            </div>
-                        </div>
-
                         <p class="small text-muted mb-0">
                             <i class="bi bi-shield-check text-success"></i>
                             I tuoi dati sono protetti e non verranno condivisi con terze parti.
