@@ -7,6 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
 class ContactFormSubmitted extends Mailable
@@ -27,6 +28,9 @@ class ContactFormSubmitted extends Mailable
     {
         return new Envelope(
             subject: 'Nuovo Messaggio dal Sito - ' . $this->contact->name,
+            replyTo: [
+                new Address($this->contact->email, $this->contact->name),
+            ],
         );
     }
 
