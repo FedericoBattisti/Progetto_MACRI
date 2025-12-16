@@ -272,3 +272,28 @@
         font-weight: 600;
     }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const acceptBtn = document.getElementById('acceptCookies');
+    const cookieBanner = document.getElementById('cookieBanner');
+
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+        console.log('Cookie impostato:', document.cookie); // DEBUG
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+            setCookie('privacy_accepted', 'true', 365);
+            cookieBanner.style.display = 'none';
+
+            // Ricarica la pagina per applicare i cambiamenti
+            location.reload();
+        });
+    }
+});
+</script>
