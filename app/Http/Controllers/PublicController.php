@@ -106,4 +106,11 @@ class PublicController extends Controller
             'title' => 'Chi Siamo'
         ]);
     }
+
+    public function privacy()
+    {
+        return view('privacy', [
+            'title' => 'Privacy Policy'
+        ]);
+    }
 }

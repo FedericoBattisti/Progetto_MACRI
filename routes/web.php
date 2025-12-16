@@ -11,6 +11,7 @@ Route::get('/collezione', [PublicController::class, 'collection'])->name('collec
 Route::get('/dove', [PublicController::class, 'dove'])->name('dove');
 Route::get('/contatti', [PublicController::class, 'contatti'])->name('contatti');
 Route::get('/chi-siamo', [PublicController::class, 'chiSiamo'])->name('chi-siamo');
+Route::get('/privacy', [PublicController::class, 'privacy'])->name('privacy');
 
 Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 

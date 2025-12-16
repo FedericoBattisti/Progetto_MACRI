@@ -72,8 +72,11 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="1" id="privacyConsent" name="privacy_consent">
                             <label class="form-check-label" for="privacyConsent">
-                                Accetto l'<a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">informativa privacy</a>
+                                Accetto l'<a href="{{ route('privacy') }}" target="_blank">informativa privacy</a>
                             </label>
+                            <div class="invalid-feedback d-block text-danger" id="privacyError" style="display: none !important;">
+                                Devi accettare l'informativa privacy
+                            </div>
                         </div>
 
                         <p class="small text-muted mb-0">
@@ -94,6 +97,32 @@
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('#newsletterModal form');
+    const checkbox = document.getElementById('privacyConsent');
+    const errorDiv = document.getElementById('privacyError');
+
+    form.addEventListener('submit', function(e) {
+        if (!checkbox.checked) {
+            e.preventDefault();
+            errorDiv.style.display = 'block';
+            checkbox.classList.add('is-invalid');
+            return false;
+        }
+        errorDiv.style.display = 'none';
+        checkbox.classList.remove('is-invalid');
+    });
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            errorDiv.style.display = 'none';
+            this.classList.remove('is-invalid');
+        }
+    });
+});
+</script>
 
 <style>
     /* Search Form Styling */
