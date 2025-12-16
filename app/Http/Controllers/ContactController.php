@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactMessage;
-use App\Jobs\SendContactEmail;
+use App\Mail\ContactFormSubmitted;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 
@@ -41,8 +42,16 @@ class ContactController extends Controller
                 'message' => $request->message,
             ]);
 
-            // Invia email in background tramite queue
-            SendContactEmail::dispatch($contact);
+            // Invia email direttamente (con QUEUE_CONNECTION=sync non serve il Job)
+            try {
+                $adminEmail = config('mail.admin_email', 'macriabbigliamentodonna@gmail.com');
+                Mail::to($adminEmail)->send(new ContactFormSubmitted($contact));
+
+                Log::info('Email contatti inviata con successo');
+            } catch (\Exception $mailException) {
+                // Log errore ma non bloccare la risposta all'utente
+                Log::error('Errore invio email contatti: ' . $mailException->getMessage());
+            }
 
             return redirect()->back()->with('success', 'Grazie per averci contattato! Ti risponderemo al più presto.');
         } catch (\Exception $e) {
