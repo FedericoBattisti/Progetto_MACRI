@@ -69,17 +69,10 @@
                         </div>
 
                         <!-- Privacy e GDPR -->
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="privacyConsent" name="privacy_consent"
-                                required>
-                            <label class="form-check-label small" for="privacyConsent">
-                                Acconsento al trattamento dei miei dati personali ai sensi del
-                                <strong>D.Lgs. 196/2003</strong> (Codice in materia di protezione dei dati personali) e
-                                del <strong>Regolamento UE 2016/679 (GDPR)</strong>.
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal"
-                                    class="text-macri text-decoration-none">
-                                    Leggi l'informativa privacy
-                                </a>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" id="privacyConsent" name="privacy_consent">
+                            <label class="form-check-label" for="privacyConsent">
+                                Accetto l'<a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">informativa privacy</a>
                             </label>
                         </div>
 
