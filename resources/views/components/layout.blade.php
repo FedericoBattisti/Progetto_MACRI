@@ -12,11 +12,11 @@
     <title>@yield('title', 'Titolo di default')</title>
     <link rel="icon" href="{{ asset('macri.jpg') }}" type="image/x-icon">
     @vite (['resources/js/app.js', 'resources/css/app.css'])
-    <!-- Altri meta tag e CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script type="text/javascript" src="https://embeds.iubenda.com/widgets/1ac07740-367f-43b9-9592-d407902c1105.js"></script>
-    <!-- Altri CSS personalizzati -->
+
+    <!-- Script di terze parti -->
+    <x-third-party-scripts />
 </head>
 
 <body>
