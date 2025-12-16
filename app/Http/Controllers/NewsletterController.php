@@ -35,11 +35,11 @@ class NewsletterController extends Controller
             Log::info('Newsletter SAVED', ['id' => $newsletter->id, 'email' => $newsletter->email]);
 
             // Invia email di conferma all'utente
-            Mail::to($validated['email'])->send(new NewsletterSubscribed($newsletter->email));
+            Mail::to($newsletter->email)->send(new NewsletterSubscribed($newsletter));
 
             // Invia notifica all'admin
             $adminEmail = env('ADMIN_EMAIL', 'macriabbigliamentodonna@gmail.com');
-            Mail::to($adminEmail)->send(new AdminNewsletterNotification($newsletter->email));
+            Mail::to($adminEmail)->send(new AdminNewsletterNotification($newsletter));
 
             return redirect()->back()->with('success', 'Grazie per esserti iscritto alla nostra newsletter! Controlla la tua email per il coupon sconto del 10%.');
 
