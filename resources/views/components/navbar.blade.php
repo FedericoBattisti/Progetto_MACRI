@@ -259,14 +259,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /* Stile checkbox personalizzato */
+    .form-check {
+        padding-left: 1.5em;
+        margin-bottom: 1rem;
+    }
+
+    .form-check-input {
+        width: 1.2em;
+        height: 1.2em;
+        margin-top: 0.25em;
+        vertical-align: top;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        appearance: none;
+        cursor: pointer;
+        float: left;
+        margin-left: -1.5em;
+    }
+
     .form-check-input:checked {
         background-color: #ce9352;
         border-color: #ce9352;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
     }
 
     .form-check-input:focus {
         border-color: #ce9352;
         box-shadow: 0 0 0 0.25rem rgba(206, 147, 82, 0.25);
+        outline: 0;
+    }
+
+    .form-check-label {
+        cursor: pointer;
+        padding-left: 0.5rem;
     }
 
     /* Stile scrollbar per modal privacy */
