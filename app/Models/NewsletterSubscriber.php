@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsletterSubscriber extends Model
 {
-    protected $table = 'newsletter_subscribers';
+    protected $fillable = ['email', 'is_active'];
 
-    protected $fillable = [
-        'email',
-    ];
+    // Se la tabella ha un nome diverso, specifica:
+    protected $table = 'newsletter_subscribers';
 }
