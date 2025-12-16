@@ -12,7 +12,7 @@ Route::get('/dove', [PublicController::class, 'dove'])->name('dove');
 Route::get('/contatti', [PublicController::class, 'contatti'])->name('contatti');
 Route::get('/chi-siamo', [PublicController::class, 'chiSiamo'])->name('chi-siamo');
 
-Route::match(['get', 'post'], 'newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newslettersubscribe');
+Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
 // Route per dettaglio prodotto
 Route::get('/prodotto/{clothe}', [PublicController::class, 'show'])->name('clothe.show');

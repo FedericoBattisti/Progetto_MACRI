@@ -52,7 +52,7 @@
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
                 </div>
-                <form action="{{ route('newslettersubscribe') }}" method="POST">
+                <form action="{{ route('newsletter.subscribe') }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <p class="text-muted">
