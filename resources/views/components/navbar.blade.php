@@ -59,6 +59,7 @@
                             Ricevi <strong>10% di sconto</strong> sul tuo primo acquisto e resta aggiornato su nuove
                             collezioni ed offerte esclusive!
                         </p>
+                        <p>N.B.: Controlla la cartella spam della tua email per trovare il coupon sconto.</p>
                         <div class="mb-3">
                             <label for="email" class="form-label">Indirizzo Email</label>
                             <input type="email" class="form-control" id="email" name="email"
