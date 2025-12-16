@@ -88,32 +88,6 @@
     </div>
 </nav>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('#newsletterModal form');
-    const checkbox = document.getElementById('privacyConsent');
-    const errorDiv = document.getElementById('privacyError');
-
-    form.addEventListener('submit', function(e) {
-        if (!checkbox.checked) {
-            e.preventDefault();
-            errorDiv.style.display = 'block';
-            checkbox.classList.add('is-invalid');
-            return false;
-        }
-        errorDiv.style.display = 'none';
-        checkbox.classList.remove('is-invalid');
-    });
-
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            errorDiv.style.display = 'none';
-            this.classList.remove('is-invalid');
-        }
-    });
-});
-</script>
-
 <style>
     /* Search Form Styling */
     .search-form {

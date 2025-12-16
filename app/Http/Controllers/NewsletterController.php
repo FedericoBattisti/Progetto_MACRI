@@ -19,13 +19,10 @@ class NewsletterController extends Controller
 
             $validated = $request->validate([
                 'email' => 'required|email|unique:newsletter_subscribers,email',
-                'privacy_consent' => 'required|accepted'
             ], [
                 'email.required' => 'L\'email è obbligatoria',
                 'email.email' => 'Inserisci un\'email valida',
                 'email.unique' => 'Questa email è già iscritta alla newsletter',
-                'privacy_consent.required' => 'Devi accettare l\'informativa privacy',
-                'privacy_consent.accepted' => 'Devi accettare l\'informativa privacy'
             ]);
 
             Log::info('Validation passed', $validated);
